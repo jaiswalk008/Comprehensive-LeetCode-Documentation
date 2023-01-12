@@ -41,6 +41,7 @@ _low_ = 8 , _high_ = 7 ---> so here low becomes greater than the target so the c
 ##### and the function will return letters[8] =  "k" 
 
 ##### target : "p" ---> In this case the function will return "m" because the **if** condition will become _true_ as "p" is greater than the last element which is "m"
+### C++ Code:
 <pre>
 class Solution {
 public:
@@ -59,4 +60,25 @@ public:
         return letters[low];
     }
 };
+</pre>
+### Java Code:
+<pre>
+class Solution {
+    public char nextGreatestLetter(char[] letters, char target) {
+        int low = 0;
+        int high = letters.length-1;
+        
+        while(low <= high){
+            int mid = low + (high-low)/2;
+            if(letters[mid] <= target)
+                low = mid+1;
+            else
+                high = mid-1;
+        }
+         //Edge Case : checking if the target is less than the first element or 
+        //greater than the last element of the array.
+        // ternary operator to check if edge case 
+        return low == letters.length ? letters[0] : letters[low];
+    }
+}
 </pre>
