@@ -1,13 +1,21 @@
 # [Single Element in a Sorted Array](https://leetcode.com/problems/single-element-in-a-sorted-array/)
 
+#### Intuition : In this problem, every element except one will have exactly one duplicate, so that means the size of the array will be an odd number. Therefore, if we divide the array in two halves, one will be of even size and the other will be of odd size, and we will continue to divide the array with the odd size.
+
+#### Idea : As the problem needs to be solved in O(logn), so we have to use the idea of Binary Search.
+
+### Approach :
+
 <pre>
 class Solution {
 public:
     int singleNonDuplicate(vector<int>& nums) {
-        int ans=0,low=0,high = nums.size()-1,mid;
+        int low=0,high = nums.size()-1,mid;
+        //if there is only one element
         if(high==0) return nums[0];
+        //some edge cases for getting results faster
         else if(nums[0] < nums[1]) return  nums[0];
-        else if(nums[high ] > nums[high-1]) return nums[high];
+        else if(nums[high] > nums[high-1]) return nums[high];
         else{
             while(low <= high){
                 mid = low + (high-low)/2;
@@ -24,7 +32,8 @@ public:
                 }
             }
         }    
-        return ans;
+        //can return anything as there will always be an answer returned from the above if..else condition
+        return mid;
     }
 };
 </pre>
