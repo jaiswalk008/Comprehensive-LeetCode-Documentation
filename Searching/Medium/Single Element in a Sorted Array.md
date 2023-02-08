@@ -1,11 +1,14 @@
 # [Single Element in a Sorted Array](https://leetcode.com/problems/single-element-in-a-sorted-array/)
 
-#### Intuition : In this problem, every element except one will have exactly one duplicate, so that means the size of the array will be an odd number. Therefore, if we divide the array in two halves, one will be of even size and the other will be of odd size, and we will continue to divide the array with the odd size.
-
-#### Idea : As the problem needs to be solved in O(logn), so we have to use the idea of Binary Search.
+#### Intuition : In this problem, every element except one will have exactly one duplicate, so that means the size of the array will be an odd number. Therefore, if we divide the array in two halves, one will be of even size and the other will be of odd size, and we will continue to divide the array with the odd size because the single element will be in the subarray with odd size
+_ Note: here we will take even sized array as we are using zero based index._
+#### Idea : As the problem needs to be solved in O(logn), so we have to use the methodology of Binary Search.
 
 ### Approach :
 
+Now, we need to calculate _mid_, there can only be **three** possible cases after that:\
+1._mid_ is the index of the single element and hence we will return it.\
+2. 
 <pre>
 class Solution {
 public:
