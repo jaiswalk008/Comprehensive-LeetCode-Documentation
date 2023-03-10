@@ -8,7 +8,19 @@ where two pointers are used to traverse the sorted vector from both ends
 while maintaining a third pointer for the current element. 
 
 **Note:**  We need to use two while loops for skipping duplicates
-**Code:**
+
+**Example :** _[-1,0, 1, 2, -1, -4]_\
+The function first sorts the input vector and the sorted vector becomes _[-4, -1, -1, 0, 1, 2]_.
+In the first iteration of the loop, k is 0, and the function checks if nums[k] is equal to nums[k-1]. Since k is 0, this condition is false, and the function proceeds to the next step.
+
+Now _i=1,j=5_ : Now in each iteration of the while loop, the function checks if the sum of _nums[i], nums[j], _and _nums[k]_ is equal to 0.  The function then skips any duplicate values of _nums[i]_ and _nums[j]_ using two while loops. Finally, the function increments _i_ and decrements _j_. 
+   
+   _sum=nums[i] + nums[j] + nums[k]_ = -3 which is not equal to **zero**.\
+    As nums[k]=-4 and for sum to be zero the sum of nums[i] +nums[j]  has to be 4.
+    
+   As _nums[i]+nums[j]=1_ which is less than _4_ so thats why we will increment _i_ and incase their sum is    greater than what we need, we will decrement _j_.(An alternative for this condition checking is in the java code)
+   
+**C++ Code:**
 #
 ```
 class Solution {
