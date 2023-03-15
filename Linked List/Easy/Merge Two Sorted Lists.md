@@ -15,6 +15,21 @@ Here's the approach for the mergeTwoLists function:
 - If there are any remaining nodes in list1 or list2, add them to the end of the merged list by setting prev->next to the remaining list.
 - Finally, return the head of the merged list (ans).
 
+**Example:**
+list 1 : 1-->2-->4-->6-->8\
+list 2 : 1-->3-->5
+
+1. temp1=1 , temp2=1 , mergedlist = 1(list 1) , rev=1(list1) , ans = temp1
+2. temp1=2 , temp2=1 , mergedlist = 1(list 1) --> 1(list 2) , prev=1(list 2)
+3. temp1=2 , temp2=3 , mergedlist = 1(list 1) --> 1(list 2) -->2(list1), prev=2(list 1)
+4. temp1=4 , temp2=3 , mergedlist = 1(list 1) --> 1(list 2) -->2(list1) -->3(list 2), prev=3(list 2)
+5. temp1=4 , temp2=5 , mergedlist = 1(list 1) --> 1(list 2) -->2(list1)-->3(list 2) -->4(list 1), prev=4(list 1)
+6. temp1=6 , temp2=5 , mergedlist = 1(list 1) --> 1(list 2) -->2(list1)-->3(list 2) -->4(list 1) -->5(list 2), prev=5(list 2)    
+7. Now as temp2=NULL, so prev->next = temp1
+
+mergedlist = 1(list 1) --> 1(list 2) -->2(list1)-->3(list 2) -->4(list 1) -->5(list 2) -->6(list 1) --. 8(list 1)
+
+
 **Code** :
 #
 ```
