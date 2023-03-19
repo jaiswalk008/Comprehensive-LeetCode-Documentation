@@ -22,7 +22,8 @@
 6. We keep repeating this process until we have visited all the elements in the matrix.
 
 7. Finally, we return the ans vector containing the elements of the matrix in the spiral order.
-<pre>
+**Code:**
+```
 class Solution {
 public:
     vector<int> spiralOrder(vector<vector<int>>& matrix) {
@@ -62,4 +63,4 @@ public:
       
     }
 };
-</pre>
+```
