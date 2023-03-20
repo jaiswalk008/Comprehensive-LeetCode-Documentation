@@ -1,5 +1,12 @@
 # [Combination Sum](https://leetcode.com/problems/combination-sum/)
 
+### Approach:
+- The approach used in this solution is recursive backtracking.
+- In the recursive case, we have two options: we can either include the current element at the current index, or we can exclude it.
+If we exclude it, we simply call the function recursively with the next element, and the temporary vector remains unchanged.
+If we include it, we add the current element to the temporary vector and to variable sum, call the function recursively with the same index, and the temporary vector updated.
+After the recursive call, we remove the current element from the temporary vector to restore it to its original state and also the variable sum.
+
 **Code:**
 ```
 class Solution {
