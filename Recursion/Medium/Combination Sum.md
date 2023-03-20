@@ -7,7 +7,15 @@
 - If we include it, we add the current element to the temporary vector and to variable sum, call the function recursively with the same index, and the temporary vector updated.
 - After the recursive call, we remove the current element from the temporary vector to restore it to its original state and also the variable sum.
 
-
+```
+                                        findCombination(0, 0)
+                             /                    |                              \
+              [2] -> findCombination(0, 2)  [3] -> findCombination(1, 3)  [6] -> findCombination(2, 6)
+                   /      |           \              |         |              /     |            \
+        [2, 2] -> findCombination(0, 4) [2, 3] -> findCombination(1, 5)  [3, 3] -> findCombination(1, 6) [6, 6] -> findCombination(2, 12)
+           /     |           \                /       |               \
+[2, 2, 2] -> findCombination(0, 6) [2, 2, 3] -> findCombination(1, 7)    [2, 3, 3] -> findCombination(2, 7)
+```
 **Code:**
 ```
 class Solution {
