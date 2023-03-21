@@ -12,6 +12,8 @@ Example: [0,0,0,0]
   - for 0 at index-1: 1(subarray of size 1) + 1(subarray of size 2) =2
   - for 0 at index-2: 1(subarray of size 1) +1(subarray of size 2) + 1(subarray of size 3) =3
   - for 0 at index-3: 1(subarray of size 1) +1(subarray of size 2) + 1(subarray of size 3) + 1(subarray of size 4) =4
+
+**Code:**
 ```
 class Solution {
 public:
